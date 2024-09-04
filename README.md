@@ -2,6 +2,8 @@
 
 After executing `docker compose up`, you can access the Swagger UI to start using the API by navigating to [http://localhost:5175/swagger/index.html](http://localhost:5175/swagger/index.html).
 
+Important (!): If you're on Windows, Localstack might fail to find localstack-init.sh file. In order to fix that, please verify EOL setting for this file. Open localstack-init.sh file in editor (VS Code for example) and set the EOL as LF instead of CRLF (you can find it in the bottom right corner of VS Code).
+
 Uploaded images are accessible at: [http://localhost:4566/post-images/{imageId}](http://localhost:4566/post-images/{imageId})
 
 Resized images are accessible at: [http://localhost:4566/post-images-final/{imageId}](http://localhost:4566/post-images-final/{imageId})
