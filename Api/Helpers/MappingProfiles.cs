@@ -34,7 +34,7 @@ public class MappingProfiles : Profile
                 Id = postEntity.LastComment.Id,
                 PostId = postEntity.LastComment.PostId,
                 Content = postEntity.LastComment.Content,
-                CreatorId = postEntity.LastComment.Creator,
+                CreatorId = postEntity.LastComment.CreatorId,
                 CreatedAt = postEntity.LastComment.CreatedAt.ToUniversalTime()
             });
         }
@@ -46,7 +46,7 @@ public class MappingProfiles : Profile
                 Id = postEntity.SecondLastComment.Id,
                 PostId = postEntity.SecondLastComment.PostId,
                 Content = postEntity.SecondLastComment.Content,
-                CreatorId = postEntity.SecondLastComment.Creator,
+                CreatorId = postEntity.SecondLastComment.CreatorId,
                 CreatedAt = postEntity.SecondLastComment.CreatedAt.ToUniversalTime()
             });
         }

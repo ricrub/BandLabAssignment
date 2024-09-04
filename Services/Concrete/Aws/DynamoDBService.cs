@@ -109,7 +109,7 @@ namespace Services.Concrete.Aws
                 throw new EntityNotFoundException(nameof(CommentEntity), commentId);
             }
 
-            if (commentToDelete.Creator != creatorId)
+            if (commentToDelete.CreatorId != creatorId)
             {
                 throw new UnauthorizedUserException("User is not authorized to delete a comment");
             }

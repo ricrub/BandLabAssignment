@@ -18,8 +18,8 @@ public class PostEntity
     [DynamoDBProperty("Caption")]
     public string Caption { get; set; }
 
-    [DynamoDBProperty("Creator")]
-    public Guid Creator { get; set; }
+    [DynamoDBProperty("CreatorId")]
+    public Guid CreatorId { get; set; }
 
     [DynamoDBProperty("ImageId")]
     public Guid ImageId { get; set; }

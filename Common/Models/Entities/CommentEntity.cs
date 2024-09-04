@@ -20,8 +20,8 @@ namespace Common.Models.Entities
         [DynamoDBProperty("Content")]
         public string Content { get; set; }
 
-        [DynamoDBProperty("Creator")]
-        public Guid Creator { get; set; }
+        [DynamoDBProperty("CreatorId")]
+        public Guid CreatorId { get; set; }
 
         [DynamoDBProperty("CreatedAt")]
         public DateTime CreatedAt { get; set; }

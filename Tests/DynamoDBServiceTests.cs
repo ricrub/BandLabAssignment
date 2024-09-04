@@ -164,7 +164,7 @@ public class DynamoDBServiceTests
         var creatorId = Guid.NewGuid();
         var createdAt = DateTime.UtcNow;
         var postEntity = new PostEntity { Id = postId };
-        var commentEntity = new CommentEntity { Creator = Guid.NewGuid() };
+        var commentEntity = new CommentEntity { CreatorId = Guid.NewGuid() };
 
         _mockDbRepository.Setup(x => x.LoadAsync<PostEntity>(It.IsAny<object>(), It.IsAny<object>()))
             .ReturnsAsync(postEntity);
@@ -184,11 +184,11 @@ public class DynamoDBServiceTests
         var postId = Guid.NewGuid();
         var creatorId = Guid.NewGuid();
         var createdAt = DateTime.UtcNow;
-        var lastComment = new CommentEntity { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow, Creator = creatorId };
+        var lastComment = new CommentEntity { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow, CreatorId = creatorId };
         var secondLastComment = new CommentEntity
-            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-1), Creator = creatorId };
+            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-1), CreatorId = creatorId };
         var thirdComment = new CommentEntity
-            { Id = commentId, CreatedAt = DateTime.UtcNow.AddMinutes(-2), Creator = creatorId };
+            { Id = commentId, CreatedAt = DateTime.UtcNow.AddMinutes(-2), CreatorId = creatorId };
         var postEntity = new PostEntity
             { Id = postId, LastComment = lastComment, SecondLastComment = secondLastComment, CommentCount = 3 };
 
@@ -231,10 +231,10 @@ public class DynamoDBServiceTests
         var postId = Guid.NewGuid();
         var creatorId = Guid.NewGuid();
         var createdAt = DateTime.UtcNow.AddMinutes(-1);
-        var lastComment = new CommentEntity { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow, Creator = creatorId };
-        var secondLastComment = new CommentEntity { Id = commentId, CreatedAt = createdAt, Creator = creatorId };
+        var lastComment = new CommentEntity { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow, CreatorId = creatorId };
+        var secondLastComment = new CommentEntity { Id = commentId, CreatedAt = createdAt, CreatorId = creatorId };
         var thirdComment = new CommentEntity
-            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-2), Creator = creatorId };
+            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-2), CreatorId = creatorId };
         var postEntity = new PostEntity
             { Id = postId, LastComment = lastComment, SecondLastComment = secondLastComment, CommentCount = 3 };
 
@@ -277,11 +277,11 @@ public class DynamoDBServiceTests
         var postId = Guid.NewGuid();
         var creatorId = Guid.NewGuid();
         var createdAt = DateTime.UtcNow;
-        var lastComment = new CommentEntity { Id = commentId, CreatedAt = createdAt, Creator = creatorId };
+        var lastComment = new CommentEntity { Id = commentId, CreatedAt = createdAt, CreatorId = creatorId };
         var secondLastComment = new CommentEntity
-            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-1), Creator = creatorId };
+            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-1), CreatorId = creatorId };
         var thirdComment = new CommentEntity
-            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-2), Creator = creatorId };
+            { Id = Guid.NewGuid(), CreatedAt = DateTime.UtcNow.AddMinutes(-2), CreatorId = creatorId };
         var postEntity = new PostEntity
             { Id = postId, LastComment = lastComment, SecondLastComment = secondLastComment, CommentCount = 3 };
 
